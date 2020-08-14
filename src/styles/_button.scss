@@ -1,0 +1,57 @@
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 140%;
+  color: $text;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  &:focus {
+    outline: 0;
+  }
+  &:disabled {
+    opacity: .4;
+    pointer-events: none;
+  }
+}
+
+@mixin btn($color) {
+  padding: 10px 20px;
+  color: $lightGrey;
+  background-color: $color;
+  border: none;
+  border-radius: 10px;
+  transition: background-color $time ease-in-out, box-shadow $time ease-in-out;
+  &:hover {
+    background-color: rgba($color, 0.8);
+    box-shadow: 0px 8px 16px rgba($color, 0.3);
+  }
+}
+
+@mixin btn-outline($color) {
+  padding: 10px 20px;
+  color: $text;
+  background-color: transparent;
+  border: 1px solid $color;
+  border-radius: 10px;
+  transition: color $time ease-in-out, background-color $time ease-in-out, box-shadow $time ease-in-out;
+  &:hover {
+    background-color: $color;
+    color: $lightGrey;
+  }
+}
+
+.btn-orange {
+  @include btn($orange);
+}
+
+.btn-outline-orange {
+  @include btn-outline($orange);
+}
