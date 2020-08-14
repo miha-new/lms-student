@@ -23,7 +23,7 @@
 }
 
 @mixin btn($color) {
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: $lightGrey;
   background-color: $color;
   border: none;
@@ -36,7 +36,7 @@
 }
 
 @mixin btn-outline($color) {
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: $text;
   background-color: transparent;
   border: 1px solid $color;
@@ -54,4 +54,28 @@
 
 .btn-outline-orange {
   @include btn-outline($orange);
+}
+
+.btn-select {
+  padding: 12px 44px 12px 20px;
+  height: 40px;
+  font-weight: 400;
+  color: $text;
+  background-color: $grey;
+  border: none;
+  border-radius: 10px;
+  &__icon {
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 18px;
+    pointer-events: none;
+    path {
+      stroke: darkGrey;
+      transition: fill $time ease-in-out;
+    }
+  }
+  &__hint {
+    color: $darkGrey;
+    margin-right: 10px;
+  }
 }

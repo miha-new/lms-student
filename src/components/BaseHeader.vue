@@ -22,7 +22,10 @@ export default {
   .base-header {
     position: relative;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+    @media (min-width: 768px) {
+      padding-bottom: 30px;
+    }
     &__container {
       display: flex;
     }
@@ -49,15 +52,18 @@ export default {
       transition: background-color $time ease-in-out, box-shadow $time ease-in-out;
     }
     &__logo-text {
-      display: flex;
-      align-items: center;
-      padding: 0px 20px;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 110%;
-      text-align: center;
-      color: $text;
-      transition: color $time ease-in-out;
+      display: none;
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        padding: 0px 20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 110%;
+        text-align: center;
+        color: $text;
+        transition: color $time ease-in-out;
+      }
     }
   }
 </style>

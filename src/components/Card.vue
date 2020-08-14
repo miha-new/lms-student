@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card__head" style="background-image: url(/img/card-1.jpg)"></div>
+    <div class="card__head" :style="{backgroundImage: `url(${card.img})`}"></div>
     <div class="card__body">
       <div class="h2 card__title">{{card.title}}</div>
       <div class="card__ul">
